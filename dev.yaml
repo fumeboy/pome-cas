@@ -1,0 +1,6 @@
+db: "postgres"
+db_user: "root"
+db_password: "123456"
+db_host: "127.0.0.1"
+db_name: "good"
+db_port: "5450"
