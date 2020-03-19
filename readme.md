@@ -24,5 +24,21 @@ user
 - telephone
 - oauth
   - github
+  
+```text
+email/telephone
+
+cas client (emailAddress) 
+   -> cas server
+       | - save email id and 验证码 答案
+       -> send email to emailAddress
+           | - user get  验证码 
+
+cas client
+   -> send 验证码答案 to cas server
+```  
+  
+  
+// cas 只做 rpc 服务
  
  

@@ -1,0 +1,77 @@
+syntax = "proto3";
+package cas;
+
+message LoginByPasswordRequest {
+  string username = 1;
+  string password = 2;
+}
+message LoginByPasswordResponse{
+  bool code = 1;
+  string msg = 2;
+}
+
+message LoginByEmailPart1Request {
+  string email = 1;
+}
+message LoginByEmailPart1Response{
+  bool code = 1;
+}
+message LoginByEmailPart2Request {
+  string answer = 1;
+}
+message LoginByEmailPart2Response{
+  bool code = 1;
+}
+
+message LoginByTelephonePart1Request {
+  string email = 1;
+}
+message LoginByTelephonePart1Response{
+  bool code = 1;
+}
+message LoginByTelephonePart2Request {
+  string answer = 1;
+}
+message LoginByTelephonePart2Response{
+  bool code = 1;
+}
+
+
+message RegisterByEmailPart1Request {
+  string email = 1;
+}
+message RegisterByEmailPart1Response{
+  bool code = 1;
+}
+message RegisterByEmailPart2Request {
+  string answer = 1;
+}
+message RegisterByEmailPart2Response{
+  bool code = 1;
+}
+
+message RegisterByTelephonePart1Request {
+  string email = 1;
+}
+message RegisterByTelephonePart1Response{
+  bool code = 1;
+}
+message RegisterByTelephonePart2Request {
+  string answer = 1;
+}
+message RegisterByTelephonePart2Response{
+  bool code = 1;
+}
+
+service CAS {
+  rpc LoginByPassword(LoginByPasswordRequest) returns (LoginByPasswordResponse){}
+  rpc LoginByEmailPart1(LoginByEmailPart1Request) returns (LoginByEmailPart1Response){}
+  rpc LoginByEmailPart2(LoginByEmailPart2Request) returns (LoginByEmailPart2Response){}
+  rpc LoginByTelephonePart1(LoginByTelephonePart1Request) returns (LoginByTelephonePart1Response){}
+  rpc LoginByTelephonePart2(LoginByTelephonePart2Request) returns (LoginByTelephonePart2Response){}
+  
+  rpc RegisterByEmailPart1(RegisterByEmailPart1Request) returns (RegisterByEmailPart1Response){}
+  rpc RegisterByEmailPart2(RegisterByEmailPart2Request) returns (RegisterByEmailPart2Response){}
+  rpc RegisterByTelephonePart1(RegisterByTelephonePart1Request) returns (RegisterByTelephonePart1Response){}
+  rpc RegisterByTelephonePart2(RegisterByTelephonePart2Request) returns (RegisterByTelephonePart2Response){}
+}
